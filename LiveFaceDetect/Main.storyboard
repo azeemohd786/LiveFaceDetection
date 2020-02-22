@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Aar-lP-KaY">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Face Detection View Controller-->
+        <scene sceneID="tR7-cA-c2e">
+            <objects>
+                <viewController id="Aar-lP-KaY" customClass="FaceDetectionViewController" customModule="LiveFaceDetect" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="U9Y-eo-qQq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9SK-4K-rvp" customClass="FaceView" customModule="LiveFaceDetect" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a1G-aU-0il">
+                                <rect key="frame" x="142" y="626" width="91" height="41"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Tlw-5G-CBH">
+                                    <rect key="frame" x="0.0" y="0.0" width="91" height="41"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan Face" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oCN-6N-WUE">
+                                            <rect key="frame" x="6" y="10" width="79" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="a6M-8q-J3F"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="51" id="neo-xZ-2Kg"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" name="rw-light"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="0.0"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="91" id="2hu-rB-kvE"/>
+                                    <constraint firstAttribute="height" constant="41" id="AmK-xR-oLl"/>
+                                    <constraint firstItem="oCN-6N-WUE" firstAttribute="centerY" secondItem="a1G-aU-0il" secondAttribute="centerY" id="F7Y-nX-FgB"/>
+                                    <constraint firstItem="oCN-6N-WUE" firstAttribute="centerX" secondItem="a1G-aU-0il" secondAttribute="centerX" id="YK5-Aa-Puw"/>
+                                </constraints>
+                                <blurEffect style="light"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="13"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </visualEffectView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XtJ-cp-sex">
+                                <rect key="frame" x="67" y="561" width="240" height="57"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="iHt-gp-fav">
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="57"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sjM-PI-TUv">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="57"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
+                                            <state key="normal" title="Process image!!">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <connections>
+                                                <segue destination="JkX-dA-rhf" kind="show" identifier="showImageSegue" id="86a-1j-BB7"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="sjM-PI-TUv" firstAttribute="top" secondItem="iHt-gp-fav" secondAttribute="top" id="8Tx-Lc-8jy"/>
+                                        <constraint firstAttribute="trailing" secondItem="sjM-PI-TUv" secondAttribute="trailing" id="Fz7-SE-xfa"/>
+                                        <constraint firstItem="sjM-PI-TUv" firstAttribute="leading" secondItem="iHt-gp-fav" secondAttribute="leading" id="Lig-nB-KqT"/>
+                                        <constraint firstAttribute="bottom" secondItem="sjM-PI-TUv" secondAttribute="bottom" id="v1B-KZ-0AJ"/>
+                                    </constraints>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="c5j-Aq-NXq"/>
+                                </constraints>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="XtJ-cp-sex" firstAttribute="leading" secondItem="5E3-3m-hrQ" secondAttribute="leading" constant="67" id="G57-dT-s12"/>
+                            <constraint firstItem="a1G-aU-0il" firstAttribute="top" secondItem="XtJ-cp-sex" secondAttribute="bottom" constant="8" id="Tho-V9-DZi"/>
+                            <constraint firstItem="5E3-3m-hrQ" firstAttribute="bottom" secondItem="a1G-aU-0il" secondAttribute="bottom" id="V5A-MX-mnW"/>
+                            <constraint firstItem="5E3-3m-hrQ" firstAttribute="trailing" secondItem="XtJ-cp-sex" secondAttribute="trailing" constant="68" id="afQ-Nq-EpF"/>
+                            <constraint firstItem="a1G-aU-0il" firstAttribute="centerX" secondItem="U9Y-eo-qQq" secondAttribute="centerXWithinMargins" id="uj3-C2-6Bl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5E3-3m-hrQ"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Gax-pf-er4" appends="YES" id="Y9h-Ee-WNx"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="faceLaserLabel" destination="oCN-6N-WUE" id="dZC-EB-n8C"/>
+                        <outlet property="faceView" destination="9SK-4K-rvp" id="huL-hY-fKf"/>
+                        <outlet property="processImageView" destination="XtJ-cp-sex" id="5qW-Aq-2I0"/>
+                        <outlet property="scanFaceView" destination="a1G-aU-0il" id="JZE-OV-fA7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lhd-pc-gnY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Gax-pf-er4">
+                    <connections>
+                        <action selector="handleTap:" destination="Aar-lP-KaY" id="rLU-al-k4b"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-234.40000000000001" y="160.56971514242881"/>
+        </scene>
+        <!--Final ImageVC-->
+        <scene sceneID="SAu-h9-Vvx">
+            <objects>
+                <viewController storyboardIdentifier="FinalImageVC" id="JkX-dA-rhf" customClass="FinalImageVC" customModule="LiveFaceDetect" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g8h-fV-EYw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lpv-6D-BAM">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="587"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vOG-Iz-l85">
+                                <rect key="frame" x="145" y="600" width="85" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="i86-bk-rsy"/>
+                                    <constraint firstAttribute="width" constant="85" id="ykw-c2-qMB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="Close"/>
+                                <connections>
+                                    <action selector="closeTapped:" destination="JkX-dA-rhf" eventType="touchUpInside" id="sVw-HB-K4Z"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Lpv-6D-BAM" firstAttribute="leading" secondItem="Sdn-rC-VDg" secondAttribute="leading" id="9yk-Bl-NO8"/>
+                            <constraint firstItem="Lpv-6D-BAM" firstAttribute="top" secondItem="Sdn-rC-VDg" secondAttribute="top" id="ARH-pE-fWy"/>
+                            <constraint firstItem="Lpv-6D-BAM" firstAttribute="trailing" secondItem="Sdn-rC-VDg" secondAttribute="trailing" id="MYY-fy-5aV"/>
+                            <constraint firstItem="Sdn-rC-VDg" firstAttribute="bottom" secondItem="vOG-Iz-l85" secondAttribute="bottom" constant="11" id="WE0-7d-twM"/>
+                            <constraint firstItem="Sdn-rC-VDg" firstAttribute="trailing" secondItem="vOG-Iz-l85" secondAttribute="trailing" constant="145" id="Wih-RL-Rws"/>
+                            <constraint firstItem="vOG-Iz-l85" firstAttribute="top" secondItem="Lpv-6D-BAM" secondAttribute="bottom" constant="13" id="eMX-mi-xVF"/>
+                            <constraint firstItem="vOG-Iz-l85" firstAttribute="leading" secondItem="Sdn-rC-VDg" secondAttribute="leading" constant="145" id="mjW-eO-eLz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Sdn-rC-VDg"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="z7l-aK-9bG"/>
+                    <connections>
+                        <outlet property="capturedImage" destination="Lpv-6D-BAM" id="Hxi-w0-Cef"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NYH-bG-i4L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="613.60000000000002" y="160.56971514242881"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="rw-light">
+            <color red="0.94901960784313721" green="0.96470588235294119" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
